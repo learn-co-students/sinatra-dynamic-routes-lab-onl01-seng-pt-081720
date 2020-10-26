@@ -20,12 +20,18 @@ class App < Sinatra::Base
    end
 
    get '/say/:word1/:word2/:word3/:word4/:word5' do
-     @string = []
+      @string = []
       params.each do |key, value|
         @string << value
       end
-      "#{@string.join(" ")}"
+      "#{@string.join(" ")}."
+   end
 
+   get '/:operation/:number1/:number2' do
+      @operation = params[:operation]
+      @number1 = params[:number1]
+      @number2 = params[:number2]
+      "#{@number1.to_i.method(@operation).(@number2.to_i)}"
    end
 
 end
