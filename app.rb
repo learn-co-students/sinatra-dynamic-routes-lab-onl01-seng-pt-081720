@@ -24,6 +24,7 @@ class App < Sinatra::Base
 
     "#{@number.times {p @phrase}}"
     #@number.times {str += "#{@phrase}\n" }
+    binding.pry
     #str
   end
 
